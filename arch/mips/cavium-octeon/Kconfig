@@ -1,6 +1,15 @@
 # SPDX-License-Identifier: GPL-2.0
 if CPU_CAVIUM_OCTEON
 
+config WAR_OCTEON_BARRIER
+	bool "Enable Octeon & Octeon Plus barrier workaround"
+	default "y"
+	help
+	  Some Cavium Octeon CPUs(Octeon & Octeon Plus)
+	  suffer from a bug that causes a single wmb ordering barrier
+	  to be ineffective, requiring the use of 2 in sequence
+	  to provide an effective barrier.
+
 config CAVIUM_CN63XXP1
 	bool "Enable CN63XXP1 errata workarounds"
 	default "n"

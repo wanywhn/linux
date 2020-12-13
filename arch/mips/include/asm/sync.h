@@ -158,7 +158,7 @@
  * Note that this expression is evaluated by the assembler (not the compiler),
  * and that the assembler evaluates '==' as 0 or -1, not 0 or 1.
  */
-#ifdef CONFIG_CPU_CAVIUM_OCTEON
+#ifdef CONFIG_WAR_OCTEON_BARRIER
 # define __SYNC_rpt(type)	(1 - (type == __SYNC_wmb))
 #else
 # define __SYNC_rpt(type)	1
